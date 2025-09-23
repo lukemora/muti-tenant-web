@@ -1,0 +1,212 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+@each $size,
+  $value in (xs: $spacing-xs, sm: $spacing-sm, md: $spacing-md, lg: $spacing-lg, xl: $spacing-xl)
+{
+  .m-#{$size} {
+    margin: $value !important;
+  }
+
+  .mt-#{$size} {
+    margin-top: $value !important;
+  }
+
+  .mr-#{$size} {
+    margin-right: $value !important;
+  }
+
+  .mb-#{$size} {
+    margin-bottom: $value !important;
+  }
+
+  .ml-#{$size} {
+    margin-left: $value !important;
+  }
+
+  .mx-#{$size} {
+    margin-left: $value !important;
+    margin-right: $value !important;
+  }
+
+  .my-#{$size} {
+    margin-top: $value !important;
+    margin-bottom: $value !important;
+  }
+
+  .p-#{$size} {
+    padding: $value !important;
+  }
+
+  .pt-#{$size} {
+    padding-top: $value !important;
+  }
+
+  .pr-#{$size} {
+    padding-right: $value !important;
+  }
+
+  .pb-#{$size} {
+    padding-bottom: $value !important;
+  }
+
+  .pl-#{$size} {
+    padding-left: $value !important;
+  }
+
+  .px-#{$size} {
+    padding-left: $value !important;
+    padding-right: $value !important;
+  }
+
+  .py-#{$size} {
+    padding-top: $value !important;
+    padding-bottom: $value !important;
+  }
+}
+
+// 文本工具类
+.text-primary {
+  color: $text-primary !important;
+}
+
+.text-secondary {
+  color: $text-secondary !important;
+}
+
+.text-light {
+  color: $text-light !important;
+}
+
+.text-accent {
+  color: $accent !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-bold {
+  font-weight: bold !important;
+}
+
+// 背景工具类
+.bg-primary {
+  background-color: $primary !important;
+}
+
+.bg-secondary {
+  background-color: $secondary !important;
+}
+
+.bg-light {
+  background-color: $bg-light !important;
+}
+
+.bg-dark {
+  background-color: $bg-dark !important;
+}
+
+.bg-accent {
+  background-color: $accent-light !important;
+}
+
+// 布局工具类
+.flex {
+  display: flex !important;
+}
+
+.flex-center {
+  @include flex-center;
+}
+
+.flex-between {
+  @include flex-between;
+}
+
+.flex-column {
+  flex-direction: column !important;
+}
+
+.flex-wrap {
+  flex-wrap: wrap !important;
+}
+
+// 隐藏工具类
+.hidden-xs {
+  @include respond-to(xs) {
+    display: none !important;
+  }
+}
+
+.hidden-sm {
+  @include respond-to(sm) {
+    display: none !important;
+  }
+}
+
+.hidden-md {
+  @include respond-to(md) {
+    display: none !important;
+  }
+}
+
+.hidden-lg {
+  @include respond-to(lg) {
+    display: none !important;
+  }
+}
+
+.hidden-xl {
+  @include respond-to(xl) {
+    display: none !important;
+  }
+}
+
+.visible-xs {
+  display: none !important;
+
+  @include respond-to(xs) {
+    display: block !important;
+  }
+}
+
+.visible-sm {
+  display: none !important;
+
+  @include respond-to(sm) {
+    display: block !important;
+  }
+}
+
+.visible-md {
+  display: none !important;
+
+  @include respond-to(md) {
+    display: block !important;
+  }
+}
+
+.visible-lg {
+  display: none !important;
+
+  @include respond-to(lg) {
+    display: block !important;
+  }
+}
+
+.visible-xl {
+  display: none !important;
+
+  @include respond-to(xl) {
+    display: block !important;
+  }
+}

@@ -1,0 +1,59 @@
+// 颜色系统
+$primary: #409eff;
+$primary-dark: #359268;
+$primary-light: #e9f5f0;
+
+$secondary: #35495e;
+$secondary-light: #4e6d8c;
+
+$accent: #ff9e7d;
+$accent-light: #fff0eb;
+
+$success: #4caf50;
+$warning: #ffc107;
+$danger: #f44336;
+$info: #2196f3;
+
+// 文本颜色
+$text-primary: #2c3e50;
+$text-secondary: #7f8c8d;
+$text-light: #f8f9fa;
+
+// 背景色
+$bg-light: #f8fafc;
+$bg-dark: #1a2a6c;
+
+// 边框
+$border-color: #e1e4e8;
+$border-radius: 8px;
+
+// 阴影
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+// 间距
+$spacing-xs: 0.25rem; // 4px
+$spacing-sm: 0.5rem; // 8px
+$spacing-md: 1rem; // 16px
+$spacing-lg: 1.5rem; // 24px
+$spacing-xl: 2rem; // 32px
+
+// 响应式断点
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// 过渡效果
+$transition-base: all 0.3s ease;
+$transition-fast: all 0.15s ease;
+$transition-slow: all 0.5s ease;
+
+// 字体
+$font-family-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$font-family-heading: 'Montserrat', $font-family-base;
+$font-size-base: 1rem;
+$font-size-sm: 0.875rem;
+$font-size-lg: 1.25rem;

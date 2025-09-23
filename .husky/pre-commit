@@ -1,0 +1,25 @@
+current_branch=$(git rev-parse --abbrev-ref HEAD)
+branch_reg="(^master$|^hotfix|^release|^fix-|^feat-|^feature-|^revert-|^chore-|^sync-)"
+
+echo $current_branch
+
+# 检查分支名是否符合要求
+if echo "$current_branch" | grep -E "$branch_reg" > /dev/null; then
+    echo "Branch name '$current_branch' is valid."
+else
+    echo "分支名：'$current_branch' 不符合正则：$branch_reg 要求"
+    exit 1
+fi
+
+npx --no-install lint-staged
+
+# 获取本次提交的代码行数
+count=$(git diff --cached --numstat | awk '{sum += $1 + $2} END {print sum}')
+
+echo "本次提交包括${count}行代码变更"
+
+# 判断代码行数是否超过400行
+# if [ $count -gt 400 ]; then
+#     echo '代码行数超过400行，请拆分后重新提交！（如无法拆分请使用git commit --no-verify -m "message"跳过检查）'
+#     exit 1
+# fi

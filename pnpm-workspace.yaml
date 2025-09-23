@@ -1,0 +1,8 @@
+# pnpm 工作空间配置文件
+# 定义工作空间包
+
+packages:
+  # 包含所有子目录中的 package.json
+  - 'packages/*'
+  # 包含根目录
+  - '.'

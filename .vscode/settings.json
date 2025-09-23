@@ -1,0 +1,67 @@
+{
+  "typescript.locale": "zh-CN",
+  "editor.fontSize": 16,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "files.autoSave": "afterDelay",
+  "editor.formatOnSave": true,
+  "prettier.printWidth": 1000,
+  //配置eslint
+  "eslint.validate": ["javascript", "typescript", "scss", "javascriptreact", "html", "vue"],
+  "eslint.format.enable": true,
+  "eslint.lintTask.enable": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "editor.mouseWheelZoom": true,
+  "editor.minimap.renderCharacters": false,
+  "debug.javascript.defaultRuntimeExecutable": {
+    "pwa-node": "node"
+  },
+  "open-in-browser.default": "{\"open-in-browser.default\":\"Chrome\"}",
+  "files.associations": {
+    "*.cjson": "jsonc",
+    "*.wxss": "css",
+    "*.wxs": "javascript"
+  },
+  "emmet.includeLanguages": {
+    "wxml": "html"
+  },
+  "minapp-vscode.disableAutoConfig": true,
+  "editor.detectIndentation": false,
+  "explorer.compactFolders": false,
+  // html使用prettier格式化
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    // "editor.defaultFormatter": "Vue.volar"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // json使用prettier格式化
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.tabSize": 2,
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "px2rem.rootFontSize": 64,
+  "px2rem.autoRemovePrefixZero": false,
+  "prettier.singleQuote": true,
+  "typescript.preferences.quoteStyle": "single",
+  "javascript.preferences.quoteStyle": "single",
+  "prettier.semi": false,
+  "typescript.preferences.semicolons": "remove",
+  "javascript.preferences.semicolons": "remove",
+  "cSpell.words": ["Axios", "Pinia", "twemoji", "Unocss", "unplugin", "Vite"]
+}
