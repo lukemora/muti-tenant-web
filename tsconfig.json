@@ -1,5 +1,5 @@
 // TODO: liujun 待删除 通过插件写入的
 {
   "files": [],
-  "references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }]
+  "references": [{ "path": "./tsconfig.app.json" }]
 }

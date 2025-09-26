@@ -8,6 +8,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
+import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig(({ command, mode }) => {
@@ -65,6 +66,9 @@ export default defineConfig(({ command, mode }) => {
 		plugins: [
 			// Vue 3 支持插件
 			vue(),
+
+			// Vue DevTools 插件 - 仅在开发环境启用，提供 Vue 组件调试功能
+			...(command === 'serve' ? [vueDevTools()] : []),
 
 			// 自动导入插件 - 减少手动导入，提升开发效率
 			AutoImport({

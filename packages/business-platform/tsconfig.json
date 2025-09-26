@@ -1,6 +1,5 @@
-// TODO: liujun 待删除 通过插件写入的
 {
-  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "extends": "../../tsconfig.app.json",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
@@ -13,19 +12,14 @@
       "@services/*": ["src/services/*"],
       "@types/*": ["src/types/*"],
       "@composables/*": ["src/composables/*"]
-    },
-
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    }
   },
   "include": [
-    "packages/*/src/**/*.ts",
-    "packages/*/src/**/*.tsx",
-    "packages/*/src/**/*.vue",
-    "packages/*/auto-imports.d.ts",
-    "packages/*/components.d.ts"
-  ]
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "auto-imports.d.ts",
+    "components.d.ts"
+  ],
+  "exclude": ["node_modules", "dist"]
 }

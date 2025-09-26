@@ -13,8 +13,8 @@
  * - 错误统一处理
  */
 
-import axios, { type AxiosRequestConfig, type AxiosResponse, type AxiosError } from 'axios';
-import { ElMessage, ElLoading } from 'element-plus';
+import axios, { type AxiosError, type AxiosRequestConfig, type AxiosResponse } from 'axios';
+import { ElLoading, ElMessage } from 'element-plus';
 
 // ==================== 类型定义 ====================
 
@@ -380,9 +380,9 @@ export function useRequest() {
   const ajax = async (options: RequestOptions): Promise<any> => {
     // 默认配置
     const config: RequestOptions = {
-      successCallback: () => { },
-      errorCallback: () => { },
-      failCallback: () => { },
+      successCallback: () => {},
+      errorCallback: () => {},
+      failCallback: () => {},
       showErrText: true,
       ...options
     };
@@ -415,7 +415,7 @@ export function useRequest() {
       // 处理成功结果
       handleSuccess(result, config);
 
-      return result;
+      return result.data;
     } catch (err) {
       // 处理错误
       handleRequestError(err, config);

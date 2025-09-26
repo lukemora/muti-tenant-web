@@ -1,5 +1,5 @@
 current_branch=$(git rev-parse --abbrev-ref HEAD)
-branch_reg="(^master$|^hotfix|^release|^fix-|^feat-|^feature-|^revert-|^chore-|^sync-)"
+branch_reg="(^master$|^hotfix|^release|^fix-|^feat-|^feature-|^revert-|^chore-|^sync-|dev|^dev_|main)"
 
 echo $current_branch
 

@@ -1,28 +1,26 @@
 {
-  "name": "demo",
+  "name": "@multi-tenant/web",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "packageManager": "pnpm@9.0.0",
   "scripts": {
-    "dev": "vite",
-    "clean": "rimraf dist node_modules/.vite",
+    "dev": "pnpm --filter @multi-tenant/business-platform dev",
+    "dev:business": "pnpm --filter @multi-tenant/business-platform dev",
+    "dev:admin": "pnpm --filter @multi-tenant/admin-platform dev",
+    "build": "pnpm --filter @multi-tenant/business-platform build",
+    "build:business": "pnpm --filter @multi-tenant/business-platform build",
+    "build:admin": "pnpm --filter @multi-tenant/admin-platform build",
+    "build:all": "pnpm -r build",
+    "clean": "pnpm -r clean",
     "reinstall": "rimraf node_modules pnpm-lock.yaml && pnpm install",
-    "build": "vite build",
-    "build:check": "vue-tsc -b && vite build",
-    "build:analyze": "vite build --mode analyze",
-    "build:fast": "vite build --mode production",
-    "preview": "vite preview",
-    "lint": "eslint src --ext .js,.jsx,.ts,.tsx,.vue",
-    "lint:check": "eslint .",
-    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,vue,json,css,scss,md}\"",
-    "format:check": "prettier --check \"src/**/*.{js,jsx,ts,tsx,vue,json,css,scss,md}\"",
-    "type-check": "tsc --noEmit",
-    "lint:fix": "eslint src --ext .js,.jsx,.ts,.tsx,.vue --fix",
+    "lint": "pnpm -r lint",
+    "lint:fix": "pnpm -r lint:fix",
+    "format": "prettier --write \"packages/**/*.{js,jsx,ts,tsx,vue,json,css,md}\"",
+    "format:check": "prettier --check \"packages/**/*.{js,jsx,ts,tsx,vue,json,css,md}\"",
+    "type-check": "pnpm -r type-check",
     "prepare": "husky install",
-    "pre-commit": "lint-staged",
-    "build:ts": "tsc",
-    "dev:ts": "tsc --watch"
+    "pre-commit": "lint-staged"
   },
   "dependencies": {
     "@element-plus/icons-vue": "latest",
@@ -30,16 +28,21 @@
     "@vueuse/core": "latest",
     "axios": "latest",
     "element-plus": "latest",
+    "lodash": "latest",
+    "moment": "latest",
     "pinia": "latest",
     "vue": "^3.5.17",
-    "vue-router": "^4.5.1",
-    "lodash": "latest",
-    "moment": "latest"
+    "vue-router": "^4.5.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
+    "@eslint/js": "latest",
     "@iconify-json/carbon": "^1.2.13",
     "@iconify-json/ep": "^1.2.3",
     "@iconify-json/ri": "^1.2.5",
+    "@types/lodash": "latest",
+    "@types/moment": "latest",
     "@types/node": "latest",
     "@typescript-eslint/eslint-plugin": "latest",
     "@typescript-eslint/parser": "latest",
@@ -56,6 +59,8 @@
     "eslint-plugin-prettier": "^5.5.4",
     "eslint-plugin-unicorn": "latest",
     "eslint-plugin-vue": "latest",
+    "husky": "latest",
+    "lint-staged": "latest",
     "postcss": "^8.4.32",
     "prettier": "latest",
     "process": "^0.11.10",
@@ -65,27 +70,20 @@
     "sass-loader": "^16.0.5",
     "typescript": "latest",
     "unocss": "^66.4.2",
-    "unplugin-auto-import": "latest",
-    "unplugin-vue-components": "latest",
+    "unplugin-auto-import": "^20.1.0",
+    "unplugin-vue-components": "^29.1.0",
     "vite": "^7.0.4",
-    "vue-tsc": "^2.2.12",
-    "@eslint/js": "latest",
+    "vite-plugin-vue-devtools": "^8.0.2",
     "vue-eslint-parser": "latest",
-    "husky": "latest",
-    "lint-staged": "latest",
-    "@commitlint/cli": "latest",
-    "@commitlint/config-conventional": "latest",
-    "@types/lodash": "latest",
-    "@types/moment": "latest"
+    "vue-tsc": "^2.2.12"
   },
   "engines": {
     "node": ">=20.0.0",
     "pnpm": ">=9.0.0"
   },
-  "browserslist": [
-    "Chrome >= 118",
-    "Firefox >= 118",
-    "Safari >= 17",
-    "Edge >= 118"
-  ]
+  "browserslist": ["Chrome >= 118", "Firefox >= 118", "Safari >= 17", "Edge >= 118"],
+  "lint-staged": {
+    "packages/**/*.{js,jsx,ts,tsx,vue}": ["eslint --fix", "prettier --write"],
+    "packages/**/*.{json,css,md}": ["prettier --write"]
+  }
 }

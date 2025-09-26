@@ -81,10 +81,6 @@ const validatePass = (_rule: any, value: string, callback: any) => {
   if (value === '') {
     callback(new Error('Please input the password'));
   } else {
-    if (ruleForm.password !== '') {
-      if (!ruleFormRef.value) return;
-      ruleFormRef.value.validateField('password');
-    }
     callback();
   }
 };

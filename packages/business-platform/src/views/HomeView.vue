@@ -1,9 +1,6 @@
 <template>
   <div class="home-view">
-    <h1 class="gradient-title">
-      Vue 3 + TypeScript + Vite + Element Plus + Pinia + Vue Router + Axios + Eslint + Prettier +
-      uno-css
-    </h1>
+    <h1 class="gradient-title">多租户管理平台</h1>
     <!-- A basic anchor icon from Phosphor icons -->
     <div class="i-ph-anchor-simple-thin" />
     <!-- An orange alarm from Material Design Icons -->
@@ -16,30 +13,29 @@
     <div class="i-twemoji-grinning-face-with-smiling-eyes hover:i-twemoji-face-with-tears-of-joy" />
     <div class="features">
       <div class="feature-card">
-        <div class="icon">🚀</div>
-        <h3>Vite</h3>
-        <p>Lightning fast build tool</p>
-        <a class="i-carbon-sun dark:i-carbon-moon" />
+        <div class="icon">👥</div>
+        <h3>租户管理</h3>
+        <p>多租户系统管理</p>
       </div>
       <div class="feature-card">
-        <div class="icon">🛠️</div>
-        <h3>Vue 3</h3>
-        <p>Reactive & Component-based</p>
+        <div class="icon">⚙️</div>
+        <h3>系统配置</h3>
+        <p>系统参数配置</p>
       </div>
       <div class="feature-card">
-        <div class="icon">📝</div>
-        <h3>TypeScript</h3>
-        <p>Static type checking</p>
+        <div class="icon">📊</div>
+        <h3>数据统计</h3>
+        <p>业务数据统计</p>
       </div>
       <div class="feature-card">
-        <div class="icon">🔀</div>
-        <h3>Vue Router</h3>
-        <p>Client-side navigation</p>
+        <div class="icon">🔐</div>
+        <h3>权限管理</h3>
+        <p>用户权限控制</p>
       </div>
       <div class="feature-card">
-        <div class="icon">📦</div>
-        <h3>Pinia</h3>
-        <p>State management</p>
+        <div class="icon">📋</div>
+        <h3>日志管理</h3>
+        <p>系统日志查看</p>
       </div>
     </div>
   </div>

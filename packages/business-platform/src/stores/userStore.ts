@@ -23,7 +23,7 @@ export const useUserStore = defineStore('user', {
     // 登录
     async login(username: string, password: string) {
       try {
-        const { token } = await userService.login(username, password);
+        const { token = '' } = await userService.login(username, password);
         this.setToken(token);
         await this.getUserInfo();
         router.push('/');
