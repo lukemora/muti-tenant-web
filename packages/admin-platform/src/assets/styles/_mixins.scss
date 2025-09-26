@@ -1,0 +1,110 @@
+@use 'variables' as *;
+
+// 响应式断点
+@mixin respond-to($breakpoint) {
+  @if $breakpoint ==xs {
+    @media (max-width: $breakpoint-xs) {
+      @content;
+    }
+  } @else if $breakpoint ==sm {
+    @media (min-width: $breakpoint-sm) {
+      @content;
+    }
+  } @else if $breakpoint ==md {
+    @media (min-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $breakpoint ==lg {
+    @media (min-width: $breakpoint-lg) {
+      @content;
+    }
+  } @else if $breakpoint ==xl {
+    @media (min-width: $breakpoint-xl) {
+      @content;
+    }
+  }
+}
+
+// 弹性布局
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// 卡片样式
+@mixin card {
+  background: white;
+  border-radius: $border-radius;
+  box-shadow: $shadow-sm;
+  padding: $spacing-md;
+  transition: $transition-base;
+
+  &:hover {
+    box-shadow: $shadow-md;
+    transform: translateY(-3px);
+  }
+}
+
+// 按钮基础样式
+@mixin button-base {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: $transition-base;
+  border: none;
+  font-family: $font-family-base;
+  text-align: center;
+}
+
+// 主按钮
+@mixin button-primary {
+  @include button-base;
+  background: $primary;
+  color: white;
+
+  &:hover {
+    background: $primary-dark;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba($primary, 0.3);
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+// 次按钮
+@mixin button-secondary {
+  @include button-base;
+  background: $secondary;
+  color: white;
+
+  &:hover {
+    background: $secondary-light;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba($secondary, 0.3);
+  }
+}
+
+// 轮廓按钮
+@mixin button-outline {
+  @include button-base;
+  background: transparent;
+  border: 2px solid $primary;
+  color: $primary;
+
+  &:hover {
+    background: rgba($primary, 0.1);
+    transform: translateY(-2px);
+  }
+}

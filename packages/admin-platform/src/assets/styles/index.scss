@@ -1,0 +1,10 @@
+// import dark theme
+@use './element/index.scss' as *;
+@use 'element-plus/theme-chalk/src/dark/css-vars.scss' as *;
+// // 1. 先加载变量
+// @import "variables";
+// 2. 再加载混合
+// @use "mixins" as *;
+
+// // 3. 最后加载工具类
+// @use "utilities" as *;
